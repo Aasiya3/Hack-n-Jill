@@ -64,7 +64,6 @@ function App() {
  const nextClick = () => {
     if (currentSituation + 1 < situations.length) {
       setCurrentSituation(currentSituation + 1);
-      // reset feedback div
       document.getElementById("feedback").innerHTML = "";
     } else {
       setdone(true);
@@ -76,15 +75,17 @@ function App() {
     <h1>Hack'N Jill</h1>
     <h2 id="situation-description">Situation Description</h2>
      {done ? (
-       <div classname="End">
-        {/* Ending message */}
-        {document.getElementById("situation-description").innerHTML = ""}
-        {/* Make it look pretty */}
-        <h2>Thank you for your time!</h2>
-        <h2>We hope you have learned something about gender equlity and inclusivity and how it can effect people</h2>
-        <h2>For more info, go to https://www.glaad.org/reference/trans-terms
-          https://www.edutopia.org/blog/gender-equity-classroom-rebecca-alber</h2>
-       </div>
+        <div className='Situation-Container'>
+          {/* Ending message */}
+    
+          {/* Make it look pretty */}
+          {document.getElementById("situation-description").innerHTML = ""}
+          <h2>Thank you for your time!</h2>
+          <h2>We hope you have learned something about gender equlity and inclusivity and how it can effect people</h2>
+          <h2>For more info, go to https://www.glaad.org/reference/trans-terms
+            https://www.edutopia.org/blog/gender-equity-classroom-rebecca-alber</h2>
+        </div>
+        
      ) : (
        <>
          <div className="Situation-Container">
