@@ -1,3 +1,3 @@
-# Hack-n-Jill
+# Hackathon Project
 
 
