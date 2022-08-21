@@ -58,6 +58,34 @@ function App() {
          experiences. Furthermore, one’s gender identity does not affect how they will work at the store.`
       }
     ]
+  },
+  {
+    description: `You are your family’s Trusted advisor. Your cousin approaches you and tells you about an incident that happened at work. 
+                  Her company was looking for a Senior manager in her department. She was part of the team that was suggesting employees for 
+                  the position based on their work-performance. A group of 15 employees were chosen as potential candidates. But suddenly after 
+                  two weeks, the only 4 male employees in the group were considered as qualifying potential candidates. Your cousin does not know 
+                  how she should feel about this and wants to know your take on it. What is your response?`,
+    options: [
+      {
+        id: 0, 
+        text: `“Your company has excellent taste, and they made a great choice eliminating anyone who they felt did not stand a chance. 
+                They know what they’re doing.”`, 
+        feedback: `Your cousin feels awry about your response but because you are the Family’s Trusted Advisor, she takes your word as the greatest 
+                  truth and leaves thinking there is a hierarchy in society based on gender identity.
+                  This is incorrect. No one is higher than anyone based on their gender identity. We are all equal and someone’s gender should not 
+                  affect whether they get a promotion or not. Promotions and employment opportunities should be given based on one’s capabilities and 
+                  their work performance.`
+      },
+      {
+        id: 1, 
+        text: "Tell your cousin about how gender identity should not affect whether someone can get the Senior manager position or not", 
+        feedback: `You educate your cousin on how society’s stereotypes regarding gender identities prevent gender equity and inclusiveness. 
+                  You explain how it is a rotten idea and may actually lead to a poor company organizational structure.
+                  The whole essence of Gender equity and inclusion is equal chances for everyone. No one should be excluded from any activities or 
+                  opportunities simply because they aren’t male or fit into a specific gender category. Activities should be inclusive to each and 
+                  every person disregarding their gender identity. There are laws that protect situations like that.`
+      }
+    ]
 }
  ];
 
@@ -82,8 +110,11 @@ function App() {
           {document.getElementById("situation-description").innerHTML = ""}
           <h2>Thank you for your time!</h2>
           <h2>We hope you have learned something about gender equlity and inclusivity and how it can effect people</h2>
-          <h2>For more info, go to https://www.glaad.org/reference/trans-terms
-            https://www.edutopia.org/blog/gender-equity-classroom-rebecca-alber</h2>
+          <h2>For more info, go to 
+            <ul> 
+              <li>https://www.glaad.org/reference/trans-terms</li>
+              <li>https://www.edutopia.org/blog/gender-equity-classroom-rebecca-alber</li>
+            </ul></h2>
         </div>
         
      ) : (
