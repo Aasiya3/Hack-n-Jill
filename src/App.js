@@ -100,14 +100,22 @@ function App() {
 
  return (
    <div className="App">
-    <h1>Hack'N Jill</h1>
-    <h2 id="situation-description">Situation Description</h2>
+    <h1>What would you do?</h1>
+    <blockquote>
+    <p id="proj-des"> 
+    With this project we hope to spread awareness and educate people about
+    gender equality by engaging the user in a given situation which displays
+    a clear gender bias, where the user would have to pick bias, where the
+    user would have to pick between one of two options.
+    </p>
+    </blockquote>      
      {done ? (
         <div className='Situation-Container'>
           {/* Ending message */}
     
           {/* Make it look pretty */}
           {document.getElementById("situation-description").innerHTML = ""}
+          {document.getElementById("proj-des").innerHTML = ""}
           <h2>Thank you for your time!</h2>
           <h2>We hope you have learned something about gender equlity and inclusivity and how it can effect people</h2>
           <h2>For more info, go to 
@@ -120,6 +128,7 @@ function App() {
      ) : (
        <>
          <div className="Situation-Container">
+         <h2 id="situation-description">Situation Description</h2>
           <div className="Situation-description">
               <h3>{situations[currentSituation].description}</h3> 
             </div>
