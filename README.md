@@ -2,9 +2,9 @@
 
 
 Unfortuanlty we were not able to deploy the website in time but the code can be run
-in a development server.
+in a development server. <br />
 
-To run:
-clone the repo
-install create-react-app along with node
-run 'npm start' to start development server
+To run: <br />
+clone the repo <br />
+install create-react-app along with node <br />
+run 'npm start' to start development server <br />
