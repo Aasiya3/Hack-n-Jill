@@ -34,22 +34,56 @@ function App() {
      ]
    },
    {
-     description: "description 2",
-     options: [
-       {id: 0, text: "option 0 text", feedback: "feedback 0 text"},
-       {id: 1, text: "option 1 text", feedback: "feedback 1 text"}
-     ]
-   }
+    description: `While shopping at your favorite mall with a friend, you enter a clothing store and are welcomed by one of the 
+                  workers there. Your friend stops and passes a comment to the person saying,” You don’t look like a real man or 
+                  woman, which of the two are you? Are you even supposed to be working here”. What should be your response?`,
+    options: [
+      {
+        id: 0, 
+        text: "Speak up and raise awareness on gender equity and inclusiveness.", 
+        feedback: `WONDERFUL! You tell your friend about how one does not have to just choose between being either male or female 
+                  and no two people are exactly alike. Gender is a unique and personal experience, and many gender identity terms aim 
+                  to represent part of those experiences. Furthermore, one’s gender identity does not affect how they will work at the 
+                  store. In the end, your friend learns something new about gender and inclusiveness, and you see the worker’s smile a 
+                  little because they do not feel the need to explain themselves anymore. That’s one more person made aware of gender 
+                  & inclusiveness, and one less person feeling the need to explain their gender identity.`
+      },
+      {
+        id: 1, 
+        text: "Silently agree, shy away from the conversation and head towards the shoe section.", 
+        feedback: `As soon as you walk away, you notice that the employee is not very comfortable trying to explain their gender to your 
+        friend. In the middle of the explanation, your friend just walks away as well and says, “I will come to this store another time.” 
+        This ends up putting the employee in a tough position and you just passed an opportunity to educate or sensitize your friend about 
+        gender and inclusiveness. Gender is a unique and personal experience, and many gender identity terms aim to represent part of those
+         experiences. Furthermore, one’s gender identity does not affect how they will work at the store.`
+      }
+    ]
+}
  ];
+
+ const nextClick = () => {
+    if (currentSituation + 1 < situations.length) {
+      setCurrentSituation(currentSituation + 1);
+      // reset feedback div
+      document.getElementById("feedback").innerHTML = "";
+    } else {
+      setdone(true);
+    }
+ }
 
  return (
    <div className="App">
     <h1>Hack'N Jill</h1>
-    <h2>Situation Description</h2>
+    <h2 id="situation-description">Situation Description</h2>
      {done ? (
        <div classname="End">
-        {setdone(false)}
-        {setCurrentSituation(1)}
+        {/* Ending message */}
+        {document.getElementById("situation-description").innerHTML = ""}
+        {/* Make it look pretty */}
+        <h2>Thank you for your time!</h2>
+        <h2>We hope you have learned something about gender equlity and inclusivity and how it can effect people</h2>
+        <h2>For more info, go to https://www.glaad.org/reference/trans-terms
+          https://www.edutopia.org/blog/gender-equity-classroom-rebecca-alber</h2>
        </div>
      ) : (
        <>
@@ -59,11 +93,13 @@ function App() {
             </div>
           <div className="Situation-options">
             {situations[currentSituation].options.map((options) => (
-                <button onClick={() => ex(options.feedback)}>{options.text}</button> 
-                // ^ add onClick handler
+                <button className="option-button" onClick={() => ex(options.feedback)}>{options.text}</button> 
             ))}
           </div>
           <div className="feedback" id="feedback"></div>
+          <div ClassName="NextButton">
+            <button className='Next=button' onClick={nextClick}>Next</button>
+          </div>
          </div> 
        </>
      )}
