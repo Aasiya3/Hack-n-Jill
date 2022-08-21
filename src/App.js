@@ -102,7 +102,7 @@ function App() {
    <div className="App">
     <h1>What would you do?</h1>
     <blockquote>
-    <p> 
+    <p id="proj-des"> 
     With this project we hope to spread awareness and educate people about
     gender equality by engaging the user in a given situation which displays
     a clear gender bias, where the user would have to pick bias, where the
